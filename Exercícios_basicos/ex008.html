@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="nome_usuario" id="nome">
+    <input type="phone" name="telefone_usuario" id="telefone">
+    <input type="email" name="email_usuario" id="email">
+    <input type="text" name="rua_usuario" id="rua">
+
+    <button onclick="enviar()">Enviar</button>
+
+    <div id="enviado">Vai aparecer aqui</div>
+
+    <script>
+        function enviar() {
+            var nome = document.getElementById("nome");
+            var telefone = document.getElementById("telefone");
+            var email = document.getElementById("email");
+            var rua = document.getElementById("rua");
+
+            var enviado = window.document.getElementById('enviado');
+            enviado.innerHTML = `Seu nome é, ${nome.value} seu numero é ${telefone.value}, seu email é ${email.value},
+            sua rua é ${rua.value}`;
+        }  
+    </script>
+</body>
+
+</html>
