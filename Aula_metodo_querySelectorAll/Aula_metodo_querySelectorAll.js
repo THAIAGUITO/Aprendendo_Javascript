@@ -4,8 +4,8 @@ const cursoC1 = [...document.getElementsByClassName("c1")]
 const cursoC2 = [...document.getElementsByClassName("c2")]
 const cursosEspeciais = document.getElementById("c1")
 
-const query_divTodas = [...document.querySelectorAll("div[class]")] //Divs que contem o atributo classe
-const query_divTodas = [...document.querySelectorAll("div > p")] //Selecionando o atributo p dentro da div
+const query_divClass = [...document.querySelectorAll("div[class]")] //Divs que contem o atributo classe
+const query_divP = [...document.querySelectorAll("div > p")] //Selecionando o atributo p dentro da div
 const query_divTodas = [...document.querySelectorAll("div")]
 const query_cursoTodos = [...document.querySelectorAll(".curso")]
 const query_cursoC1 = [...document.querySelectorAll(".c1")]
