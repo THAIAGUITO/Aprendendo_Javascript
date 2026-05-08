@@ -1,0 +1,53 @@
+.texto_numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.caixa_grande{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.caixa{
+    padding: 0px;
+    margin: 0px;
+}
+
+input {
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    height: 20px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+button {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+#resultado {
+    width: 200px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border: 1px solid black;
+}
