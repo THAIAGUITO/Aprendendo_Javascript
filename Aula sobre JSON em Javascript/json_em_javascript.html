@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula sobre JSON em javascript</title>
+    <style></style>
+    <script>
+      let colabJSON =
+        '{"colaborades":[' +
+        '{"nome":"Bruno","salario":10000,"idade":40},' +
+        '{"nome":"Cleyton","salario":13500,"idade":32},' +
+        '{"nome":"Matheus","salario":8200,"idade":25},' +
+        '{"nome":"Fernando","salario":350000,"idade":38},' +
+        '{"nome":"Nicolas","salario":5000,"idade":21}' +
+        "]}";
+
+      let colabOBJ = [
+        { nome: "Bruno", salario: 10000, idade: 40 },
+        { nome: "Cleyton", salario: 13500, idade: 32 },
+        { nome: "Matheus", salario: 8200, idade: 25 },
+        { nome: "Fernando", salario: 350000, idade: 38 },
+        { nome: "Nicolas", salario: 5000, idade: 21 },
+      ];
+
+      let colab = { nome: "Bruno", salario: 1000, idade: 40 };
+
+      let c_obj = JSON.parse(colabJSON);
+      let c_json = JSON.stringify(colabOBJ);
+
+      console.log(colab);
+      console.log("---------------------");
+      console.log(JSON.stringify(colab));
+
+      // console.log(c_obj.colaborades[0].nome);
+      // console.log(c_json);
+    </script>
+  </head>
+  <body></body>
+</html>
