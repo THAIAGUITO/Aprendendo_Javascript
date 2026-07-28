@@ -1,0 +1,11 @@
+# Dependências
+node_modules/
+
+# Código e configuração do servidor (mantidos privados)
+server.js
+dados.json
+package.json
+package-lock.json
+
+# Variáveis de ambiente (caso venha a usar no futuro)
+.env
