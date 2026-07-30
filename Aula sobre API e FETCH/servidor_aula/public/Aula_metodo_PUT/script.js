@@ -27,7 +27,7 @@ async function usuarios() {
   }
 }
 
-async function atualizarUsuario(id) {
+async function atualizarUsuario(id, novoNome, novaIdade, novaCidade) {
   try {
     await fetch(`https://6a68c259b2789286ad702aef.mockapi.io/usuarios/${id}`, {
       method: "PUT",
@@ -37,9 +37,9 @@ async function atualizarUsuario(id) {
       },
 
       body: JSON.stringify({
-        name: name,
-        idade: idade,
-        cidade: cidade,
+        name: novoNome,
+        idade: novaIdade,
+        cidade: novaCidade,
       }),
     });
   } catch (error) {
@@ -50,9 +50,18 @@ async function atualizarUsuario(id) {
 usuarios();
 
 document.querySelector("#lista-usuarios").addEventListener("click", (evento) => {
+  const novoNome = prompt("Digite o novo nome do usuário:");
+  const novaIdade = prompt("Digite a nova idade do usuário:");
+  const novaCidade = prompt("Digite a nova cidade do usuário:");
+
   if (evento.target.classList.contains("update")) {
     const id = evento.target.dataset.id;
-    atualizarUsuario(id);
-    evento.target.closest(".conteiner").remove();
+    if (!novoNome || !novaIdade || !novaCidade) {
+      alert("Todos os campos devem ser preenchidos!");
+      return;
+    }
+    atualizarUsuario(id, novoNome, novaIdade, novaCidade).then(() => {
+      usuarios();
+    });
   }
 });
