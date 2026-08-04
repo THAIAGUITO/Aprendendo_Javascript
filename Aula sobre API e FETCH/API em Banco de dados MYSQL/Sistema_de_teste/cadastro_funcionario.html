@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CADASTRO DE FUNCIONÁRIO</title>
+
+    <link rel="stylesheet" href="estilos/style.css" />
+    <link rel="stylesheet" href="estilos/cadastro_funcionario.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+
+  <body>
+    <!-- Aqui começa a div do cabeçalho -->
+
+    <div id="header-site"></div>
+
+    <!-- Aqui acaba a div do cabeçalho -->
+
+    <div class="pagina">
+      <!-- Aqui começa a div da barra lateral -->
+
+      <div id="sidebar-site"></div>
+
+      <!-- Aqui acaba a div da barra lateral -->
+
+      <main>
+        <div class="topo_conteudo">
+          <div class="esquerda_topo">
+            <a href="funcionarios.html">
+              <button class="voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                voltar
+              </button>
+            </a>
+
+            <div class="texto_topo_conteudo">
+              <div class="titulo_topo">Cadastrar Funcionário</div>
+              <div class="descricao_topo">Preencha os dados para adicionar um novo membro à equipe</div>
+            </div>
+          </div>
+
+          <button id="salvar_cadastro">
+            <i class="fa-solid fa-user-plus"></i>
+            Cadastrar
+          </button>
+        </div>
+
+        <div class="conteudo_formulario">
+          <!-- Conteudo do formulário central -->
+
+          <div class="conteudo_central">
+            <div class="caixa_formulario">
+              <div class="topo_formulario">
+                <i class="fa-solid fa-user" style="color: #4ade7b; font-size: 13px"></i>
+                <p>Dados Pessoais</p>
+              </div>
+
+              <div class="caixa_foto_usuario">
+                <div class="avatar" style="background: #1a7a4a">JO</div>
+                <div class="inf_avatar">
+                  <p>Foto do Funcionário</p>
+                  <span>JPG ou PNG, máximo 2MB</span>
+                </div>
+                <div class="btn_upload" id="btn_image">
+                  <i class="fa-solid fa-upload"></i>
+                  Enviar Foto
+                </div>
+              </div>
+
+              <div class="linhas_cards dois">
+                <div class="campo">
+                  <label for="Nome">Nomes</label>
+                  <div class="caixa_input">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="nome" class="input_inf" type="text" placeholder="Nome" />
+                  </div>
+                </div>
+
+                <div class="campo">
+                  <label for="Sobrenome">Sobrenome</label>
+                  <div class="caixa_input">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="sobrenome" class="input_inf" type="text" placeholder="Sobrenome" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="linhas_cards dois">
+                <div class="campo">
+                  <label for="telefone">Telefone</label>
+                  <div class="caixa_input">
+                    <i class="fa-solid fa-phone"></i>
+                    <input id="telefone" class="input_inf" type="text" placeholder="(12) 99999-9999" maxlength="15" />
+                  </div>
+                </div>
+
+                <div class="campo">
+                  <label for="E-mail">E-mail</label>
+                  <div class="caixa_input">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input id="email" class="input_inf" type="email" placeholder="nome@email.com" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Termino do conteudo do formulário central -->
+
+          <div class="conteudo_lateral">
+            <div class="caixa_formulario">
+              <div class="topo_formulario">
+                <i class="fa-solid fa-eye" style="color: #4ade7b; font-size: 13px"></i>
+                <p>Pré Visualização</p>
+              </div>
+
+              <div class="visualizacao_funcionario">
+                <div class="visualizacao_avatar">??</div>
+                <div class="visualizacao_nome">Nome do Funcionário</div>
+                <div class="visualizacao_turno">Turno</div>
+              </div>
+              <div class="resumo_inf">
+                <span class="resumo_inf_label">Telefone</span>
+                <span class="resumo_valor_label" id="inf_telefone"></span>
+              </div>
+              <div class="resumo_inf">
+                <span class="resumo_inf_label">E-mail</span>
+                <span class="resumo_valor_label" id="inf_email"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="scripts/cadastro_funcionario.js"></script>
+  </body>
+</html>

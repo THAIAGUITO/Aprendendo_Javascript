@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #0b0f0d;
+  min-height: 100vh;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pagina {
+  display: flex;
+  height: calc(100vh - 58px);
+}
+
+main {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+.linha_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+
+.chamados_hoje {
+  background: #161e18;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 18px 20px;
+  cursor: default;
+  transition: 0.2s;
+}
+
+.card_topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card_topo p {
+  color: #7a9880;
+  font-size: 12px;
+}
+
+.fundo_icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.chamados_hoje:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: #1c2720;
+  cursor: pointer;
+}
+
+.card_central {
+  font-family: "Syne", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: #e2ebe4;
+}
+
+.card_inferior {
+  font-size: 11.5px;
+  color: #5a7460;
+  margin-top: 6px;
+}
+
+.card_central small {
+  font-size: 16px;
+  color: #5a7460;
+  font-weight: 400;
+}
+
+.card_sub p {
+  color: #5a7460;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.linha_inferior {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.area_mapa {
+  flex: 1;
+  background: #18241a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 15px;
+}
+
+.topo_area_mapa {
+  background: #161e18;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.texto_topo_mapa {
+  width: 40%;
+}
+
+.texto_topo_mapa h1 {
+  color: white;
+  font-size: 14px;
+}
+
+.texto_topo_mapa p {
+  color: #5a7460;
+  font-size: 12px;
+}
+
+.novo_chamado {
+  background: #1a8a36;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.15s;
+}
+
+.novo_chamado label {
+  cursor: pointer;
+}
+
+.novo_chamado:hover {
+  background: #26a641;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#mapa {
+  width: 100%;
+  height: calc(100% - 60px);
+  border-radius: 0 0 15px 15px;
+}
+
+.painel_direito {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  align-items: flex-start;
+}
+
+.chamados_ativos {
+  background: #161e18;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 15px;
+  overflow-y: auto;
+  min-height: 450px;
+  max-height: 450px;
+  min-width: 300px;
+  overflow: hidden;
+}
+
+.chamados_ativo_topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 18px;
+}
+
+.titulo_chamado_topo {
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #e2ebe4;
+}
+
+.subtitulo_chamado_topo {
+  font-size: 12px;
+  color: #5a7460;
+  margin-top: 2px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.disponibilidade_sistema {
+  background: rgba(245, 200, 66, 0.12);
+  color: #f5c842;
+  display: inline-flex;
+  padding: 3px 8px;
+  border-radius: 20px;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.bolinha_de_disponibilidade {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.chamados {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.15s;
+}
+
+.chamados:hover {
+  background: #1c2720;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.chamados_ativos h1 {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chamados_ativos p {
+  color: #5a7460;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.linha {
+  display: flex;
+  width: 3px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.conteudo_chamado {
+  width: 100%;
+}
+
+.linha_topo_chamado {
+  display: flex;
+  align-items: center;
+}
+
+.prioridade {
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  height: auto;
+}
+
+.prioridade p {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.linha_topo_chamado h1 {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 6px;
+  white-space: nowrap;
+}
+
+.linha_topo_chamado h2 {
+  color: #5a7460;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.parte_baixo_chamados {
+  display: flex;
+  flex-direction: column;
+}
+
+.parte_baixo_chamados .endereco {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.parte_baixo_chamados p {
+  color: #80af8b;
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+.parte_baixo_chamados h2 {
+  color: #5a7460;
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 3px;
+}
+
+.fa-location-dot {
+  font-size: 12px;
+  color: #5a7460;
+  padding-top: 3px;
+}
+
+.estatus_equipe {
+  background: #161e18;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 15px;
+  overflow-y: auto;
+  min-height: 200px;
+  max-height: 200px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.topo_card_equipe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 20px;
+}
+
+.topo_card_equipe h1 {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.caixa_estilo_ativo {
+  background: rgba(74, 222, 123, 0.12);
+  border-radius: 10px;
+  padding: 0% 10px;
+}
+
+.caixa_estilo_ativo p {
+  color: #4ade7b;
+  font-size: 12px;
+}
+
+.inferior_card_equipe {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card_funcinario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.funcionario {
+  background: #111712;
+  width: 90%;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.img_funcionario {
+  height: 60%;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin-left: 10px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.img_funcionario p {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.informações_usuario h1 {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.informações_usuario p {
+  font-size: 10px;
+  font-weight: 500;
+  padding-left: 10px;
+}
